@@ -1018,3 +1018,8 @@ body[data-theme="dark"] .text-muted {
     max-width: inherit;
   }
 }
+
+/*text align*/
+.text-justified {
+    text-align: justify;
+}
