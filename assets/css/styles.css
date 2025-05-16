@@ -1023,3 +1023,45 @@ body[data-theme="dark"] .text-muted {
 .text-justified {
     text-align: justify;
 }
+
+/*collapse btn*/
+.social-collapse-btn {
+    color: inherit !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important; /* Remove border */
+    box-shadow: none !important; /* Remove shadow */
+}
+
+.social-collapse-btn:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.social-collapse-btn:focus {
+    outline: none !important; /* Remove border when clicked */
+    box-shadow: none !important;
+}
+
+.social-collapse-btn .fa-chevron-down {
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.social-collapse-btn[aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.more-social-links {
+    margin-left: 20px;
+}
+
+/* Add bottom margin */
+.more-social-links li:last-child {
+    margin-bottom: 15px;
+}
