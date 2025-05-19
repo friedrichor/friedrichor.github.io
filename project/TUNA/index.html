@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> TUNA </title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <script>
+    const BENCH = {
+        toString: function() {
+            return '<span>T<span style="font-size: smaller;">UNA</span></span>'
+        }
+    };
+    const DATASET = {
+        toString: function() {
+            return '<span>T<span style="font-size: smaller;">UNA</span>-1K</span>'
+        }
+    };
+    const BENCHCAP = {
+        toString: function() {
+            return '<span>T<span style="font-size: smaller;">UNA</span>-<span style="font-size: smaller;">CAP</span></span>';
+        }
+    };
+    const BENCHMCQ = {
+        toString: function() {
+            return '<span>T<span style="font-size: smaller;">UNA</span>-<span style="font-size: smaller;">MCQ</span></span>';
+        }
+    };
+
+    /* Used to replace all references after the page loads */
+    function replaceDatasetReferences() {
+        const benchRefs = document.getElementsByClassName('bench-ref');
+        for (let element of benchRefs) {
+            element.innerHTML = BENCH.toString();
+        }
+        const datasetRefs = document.getElementsByClassName('dataset-ref');
+        for (let element of datasetRefs) {
+            element.innerHTML = DATASET.toString();
+        }
+        const benchcapRefs = document.getElementsByClassName('benchcap-ref');
+        for (let element of benchcapRefs) {
+            element.innerHTML = BENCHCAP.toString();
+        }
+        const benchmcqRefs = document.getElementsByClassName('benchmcq-ref');
+        for (let element of benchmcqRefs) {
+            element.innerHTML = BENCHMCQ.toString();
+        }
+    }
+  </script>
+
+</head>
+
+
+<body onload="replaceDatasetReferences()">
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/friedrichor/TUNA">
+            <b>TUNA</b> 
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/logo.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+            <span style="vertical-align: middle"><span class="bench-ref"></span></span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
+            Comprehensive Fine-grained Temporal <br> Understanding Evaluation on Dense Dynamic Videos
+          </h2>
+          <div class="is-size-5 publication-authors">
+          <!-- Paper authors -->
+          <span class="author-block">
+            <a href="https://friedrichor.github.io/" target="_blank">Fanheng Kong</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=pdj-Em0AAAAJ&hl=en" target="_blank">Jingyuan Zhang</a><sup>2*</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Hongzhi Zhang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://neu-datamining.github.io/cse/fengshi/" target="_blank">Shi Feng</a><sup>1†</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://neu-datamining.github.io/wangdl.htm" target="_blank">Daling Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Linhao Yu</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xingguang Ji</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Yu Tian</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Qi Wang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Fuzheng Zhang</a><sup>2</sup></span>
+              </div>
+              
+              <div class="is-size-6 publication-authors">
+                <span class="author-block"><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding Author</span>
+              </div>
+        
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Northeastern University, <sup>2</sup>Kuaishou Technology</span>
+              </div>
+          </div>
+
+        </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/friedrichor/TUNA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> 
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Videos are unique in their integration of temporal elements, including camera, scene, action, and attribute, along with their dynamic relationships over time. 
+          However, existing benchmarks for video understanding often treat these properties separately or narrowly focus on specific aspects, overlooking the holistic 
+          nature of video content. To address this, we introduce <strong><span class="bench-ref"></span></strong>, a temporal-oriented benchmark for fine-grained understanding 
+          on dense dynamic videos, with two complementary tasks: captioning and QA. Our <strong><span class="bench-ref"></span></strong> features diverse video scenarios 
+          and dynamics, assisted by interpretable and robust evaluation criteria. We evaluate several leading models on our benchmark, providing fine-grained performance 
+          assessments across various dimensions. This evaluation reveals key challenges in video temporal understanding, such as limited action description, inadequate 
+          multi-subject understanding, and insensitivity to camera motion, offering valuable insights for improving video understanding models.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
+  }
+</script>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+
+        <h2 class="title is-3" id="leaderboard">Leaderboard (<span class="benchcap-ref"></span>)</h2>
+        <div class="content">
+          <div class="visual-characteristic">
+            <p>
+              Listed here is the F1 score.
+            </p>
+            <p>
+              <strong>Low-Dy.:</strong> Low-Dynamic  &emsp;&emsp;
+              <strong>High-Dy.:</strong> High-Dynamic  &emsp;&emsp;
+              <strong>Multi-Sc.:</strong> Multi-Scene  &emsp;&emsp;
+              <strong>Multi-Su.:</strong> Multi-Subject
+            </p>
+            <p>
+              By default, this leaderboard is sorted by overall F1 score, with overall Recall score as a secondary sort key. To view other sorted results, please click on the corresponding cell.
+            </p>
+          </div>
+
+          <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+            <thead>
+              <tr>
+                <th rowspan="2" class="frozen-column" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong></strong></th>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 215px;" data-js-sort-colNum="none"><strong>Model</strong></th>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>LLM <br>Params</strong></th>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 100px;" data-js-sort-colNum="none"><strong>Frames</strong></th>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 110px;" data-js-sort-colNum="none"><strong>Date</strong></th>
+                <th rowspan="2" style="vertical-align: middle; width: 110px;" data-js-sort-colNum="5"><strong>Overall (%)</strong></th>
+                <!-- <th colspan="3" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="5"><strong>Overall (%)</strong></th> -->
+                <th colspan="4" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="8"><strong>Perception Skill (%)</strong></th>
+                <th colspan="4" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="10"><strong>Visual Characteristic (%)</strong></th> 
+              </tr>
+              <tr>
+                <!-- <th data-js-sort-colNum="5"><strong>F1</strong></th> -->
+                <!-- <th data-js-sort-colNum="6"><strong>P</strong></th>
+                <th data-js-sort-colNum="7"><strong>R</strong></th> -->
+                <th data-js-sort-colNum="6"><strong>Camera</strong></th>
+                <th data-js-sort-colNum="7"><strong>Scene</strong></th>
+                <th data-js-sort-colNum="8"><strong>Action</strong></th>
+                <th data-js-sort-colNum="9"><strong>Attribute</strong></th>
+                <th data-js-sort-colNum="10"><strong>Low-Dy.</strong></th>
+                <th data-js-sort-colNum="11"><strong>High-Dy.</strong></th>
+                <th data-js-sort-colNum="12"><strong>Multi-Sc.</strong></th>
+                <th data-js-sort-colNum="13"><strong>Multi-Su.</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://openai.com/index/hello-gpt-4o/" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-0806
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">- </td>
+                <td style="vertical-align: middle;">1/2 fps<sup>1*</sup></td>
+                <td style="vertical-align: middle;">2024-08-06</td>
+                <td style="vertical-align: middle;">58.5</td>
+                <td style="vertical-align: middle;">61.3</td>
+                <td style="vertical-align: middle;">66.4</td>
+                <td style="vertical-align: middle;">48.0</td>
+                <td style="vertical-align: middle;">57.8</td>
+                <td style="vertical-align: middle;">58.2</td>
+                <td style="vertical-align: middle;">58.7</td>
+                <td style="vertical-align: middle;">58.1</td>
+                <td style="vertical-align: middle;">55.5</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini 1.5 Pro 002</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">- </td>
+                <td style="vertical-align: middle;">1/2 fps<sup>1*</sup></td>
+                <td style="vertical-align: middle;">2024-05-24</td>
+                <td style="vertical-align: middle;">57.4</td>
+                <td style="vertical-align: middle;">60.7</td>
+                <td style="vertical-align: middle;">63.3</td>
+                <td style="vertical-align: middle;">46.3</td>
+                <td style="vertical-align: middle;">56.0</td>
+                <td style="vertical-align: middle;">58.7</td>
+                <td style="vertical-align: middle;">56.7</td>
+                <td style="vertical-align: middle;">57.0</td>
+                <td style="vertical-align: middle;">53.3</td>  
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini 1.5 Flash 002</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">- </td>
+                <td style="vertical-align: middle;">1/2 fps<sup>1*</sup></td>
+                <td style="vertical-align: middle;">2024-05-24</td>
+                <td style="vertical-align: middle;">55.7</td>
+                <td style="vertical-align: middle;">59.6</td>
+                <td style="vertical-align: middle;">65.1</td>
+                <td style="vertical-align: middle;">42.9</td>
+                <td style="vertical-align: middle;">55.2</td>
+                <td style="vertical-align: middle;">56.0</td>
+                <td style="vertical-align: middle;">55.5</td>
+                <td style="vertical-align: middle;">55.9</td>
+                <td style="vertical-align: middle;">55.9</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-76B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">51.9</td>
+                <td style="vertical-align: middle;">53.9</td>
+                <td style="vertical-align: middle;">61.4</td>
+                <td style="vertical-align: middle;">41.2</td>
+                <td style="vertical-align: middle;">50.9</td>
+                <td style="vertical-align: middle;">52.8</td>
+                <td style="vertical-align: middle;">51.5</td>
+                <td style="vertical-align: middle;">51.1</td>
+                <td style="vertical-align: middle;">49.3</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://qwenlm.github.io/blog/qwen2-vl/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL-72B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">72B </td>
+                <td style="vertical-align: middle;">2 fps<sup>2*</sup> </td>
+                <td style="vertical-align: middle;">2024-08-30</td>
+                <td style="vertical-align: middle;">51.7</td>
+                <td style="vertical-align: middle;">54.0</td>
+                <td style="vertical-align: middle;">52.8</td>
+                <td style="vertical-align: middle;">42.6</td>
+                <td style="vertical-align: middle;">48.5</td>
+                <td style="vertical-align: middle;">55.7</td>
+                <td style="vertical-align: middle;">49.7</td>
+                <td style="vertical-align: middle;">48.0</td>
+                <td style="vertical-align: middle;">43.3</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-40B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">34B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">51.7</td>
+                <td style="vertical-align: middle;">55.1</td>
+                <td style="vertical-align: middle;">59.0</td>
+                <td style="vertical-align: middle;">39.3</td>
+                <td style="vertical-align: middle;">52.3</td>
+                <td style="vertical-align: middle;">53.9</td>
+                <td style="vertical-align: middle;">50.5</td>
+                <td style="vertical-align: middle;">50.5</td>
+                <td style="vertical-align: middle;">48.0</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/OpenBMB/MiniCPM-V?tab=readme-ov-file#minicpm-v-26" class="ext-link" style="font-size: 16px; margin-left: 5px;">MiniCPM-V 2.6
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenBMB</p>
+                </a> </b></td>
+                <td style="vertical-align: middle;">8B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-08-06</td>
+                <td style="vertical-align: middle;">51.7</td>
+                <td style="vertical-align: middle;">56.0</td>
+                <td style="vertical-align: middle;">60.6</td>
+                <td style="vertical-align: middle;">38.8</td>
+                <td style="vertical-align: middle;">50.2</td>
+                <td style="vertical-align: middle;">53.0</td>
+                <td style="vertical-align: middle;">51.0</td>
+                <td style="vertical-align: middle;">51.7</td>
+                <td style="vertical-align: middle;">49.0</td>                      
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-Video-7B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-09-30</td>
+                <td style="vertical-align: middle;">51.0</td>
+                <td style="vertical-align: middle;">50.4</td>
+                <td style="vertical-align: middle;">58.9</td>
+                <td style="vertical-align: middle;">37.8</td>
+                <td style="vertical-align: middle;">53.1</td>
+                <td style="vertical-align: middle;">52.2</td>
+                <td style="vertical-align: middle;">50.3</td>
+                <td style="vertical-align: middle;">50.0</td>
+                <td style="vertical-align: middle;">45.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-Video-72B<sub style="font-size: 12px; margin-left: 2px;">SlowFast</sub>
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-09-30</td>
+                <td style="vertical-align: middle;">50.2</td>
+                <td style="vertical-align: middle;">50.3</td>
+                <td style="vertical-align: middle;">56.4</td>
+                <td style="vertical-align: middle;">39.3</td>
+                <td style="vertical-align: middle;">50.8</td>
+                <td style="vertical-align: middle;">50.6</td>
+                <td style="vertical-align: middle;">50.0</td>
+                <td style="vertical-align: middle;">49.3</td>
+                <td style="vertical-align: middle;">45.7</td>
+              </tr>
+
+              
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision-72B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-08-05</td>
+                <td style="vertical-align: middle;">49.6</td>
+                <td style="vertical-align: middle;">51.9</td>
+                <td style="vertical-align: middle;">57.7</td>
+                <td style="vertical-align: middle;">36.0</td>
+                <td style="vertical-align: middle;">48.8</td>
+                <td style="vertical-align: middle;">48.6</td>
+                <td style="vertical-align: middle;">45.9</td>
+                <td style="vertical-align: middle;">50.1</td>
+                <td style="vertical-align: middle;">49.4</td>                               
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision-7B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-08-05</td>
+                <td style="vertical-align: middle;">49.3</td>
+                <td style="vertical-align: middle;">51.0</td>
+                <td style="vertical-align: middle;">57.6</td>
+                <td style="vertical-align: middle;">36.8</td>
+                <td style="vertical-align: middle;">49.3</td>
+                <td style="vertical-align: middle;">50.0</td>
+                <td style="vertical-align: middle;">48.9</td>
+                <td style="vertical-align: middle;">48.4</td>
+                <td style="vertical-align: middle;">43.8</td>                               
+              </tr>
+              
+              
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-26B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">20B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">49.0</td>
+                <td style="vertical-align: middle;">51.6</td>
+                <td style="vertical-align: middle;">58.7</td>
+                <td style="vertical-align: middle;">37.0</td>
+                <td style="vertical-align: middle;">49.1</td>
+                <td style="vertical-align: middle;">49.4</td>
+                <td style="vertical-align: middle;">48.9</td>
+                <td style="vertical-align: middle;">48.4</td>
+                <td style="vertical-align: middle;">45.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://qwenlm.github.io/blog/qwen2-vl/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL-7B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B </td>
+                <td style="vertical-align: middle;">2 fps<sup>2*</sup> </td>
+                <td style="vertical-align: middle;">2024-08-30</td>
+                <td style="vertical-align: middle;">48.9</td>
+                <td style="vertical-align: middle;">49.0</td>
+                <td style="vertical-align: middle;">56.7</td>
+                <td style="vertical-align: middle;">37.0</td>
+                <td style="vertical-align: middle;">46.7</td>
+                <td style="vertical-align: middle;">53.8</td>
+                <td style="vertical-align: middle;">46.4</td>
+                <td style="vertical-align: middle;">44.4</td>
+                <td style="vertical-align: middle;">39.9</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/bytedance/tarsier" class="ext-link" style="font-size: 16px; margin-left: 5px;">Tarsier-34B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">34B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">48.2</td>
+                <td style="vertical-align: middle;">42.3</td>
+                <td style="vertical-align: middle;">44.4</td>
+                <td style="vertical-align: middle;">47.6</td>
+                <td style="vertical-align: middle;">42.2</td>
+                <td style="vertical-align: middle;">49.1</td>
+                <td style="vertical-align: middle;">47.8</td>
+                <td style="vertical-align: middle;">49.6</td>
+                <td style="vertical-align: middle;">47.3</td>
+              </tr>
+
+              
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://kangaroogroup.github.io/Kangaroo.github.io/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Kangaroo
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Meituan & UCAS</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">8B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-17</td>
+                <td style="vertical-align: middle;">42.7</td>
+                <td style="vertical-align: middle;">44.1</td>
+                <td style="vertical-align: middle;">51.9</td>
+                <td style="vertical-align: middle;">31.9</td>
+                <td style="vertical-align: middle;">39.5</td>
+                <td style="vertical-align: middle;">45.6</td>
+                <td style="vertical-align: middle;">41.1</td>
+                <td style="vertical-align: middle;">39.3</td>
+                <td style="vertical-align: middle;">35.7</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px; margin-left: 5px;">InternVL2-8B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">40.8</td>
+                <td style="vertical-align: middle;">41.7</td>
+                <td style="vertical-align: middle;">44.7</td>
+                <td style="vertical-align: middle;">30.0</td>
+                <td style="vertical-align: middle;">42.3</td>
+                <td style="vertical-align: middle;">44.5</td>
+                <td style="vertical-align: middle;">38.9</td>
+                <td style="vertical-align: middle;">38.4</td>
+                <td style="vertical-align: middle;">35.2</td>
+              </tr>
+              
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://github.com/bytedance/tarsier" class="ext-link" style="font-size: 16px; margin-left: 5px;">Tarsier-7B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-07-04</td>
+                <td style="vertical-align: middle;">38.6</td>
+                <td style="vertical-align: middle;">34.8</td>
+                <td style="vertical-align: middle;">33.1</td>
+                <td style="vertical-align: middle;">36.2</td>
+                <td style="vertical-align: middle;">33.3</td>
+                <td style="vertical-align: middle;">46.5</td>
+                <td style="vertical-align: middle;">34.5</td>
+                <td style="vertical-align: middle;">35.8</td>
+                <td style="vertical-align: middle;">33.2</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://pllava.github.io/" class="ext-link" style="font-size: 16px; margin-left: 5px;">PLLaVA-34B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">NUS & NYU & Bytedance</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">34B</td>
+                <td style="vertical-align: middle;">16</td>
+                <td style="vertical-align: middle;">2024-04-24</td>
+                <td style="vertical-align: middle;">34.2</td>
+                <td style="vertical-align: middle;">37.4</td>
+                <td style="vertical-align: middle;">39.9</td>
+                <td style="vertical-align: middle;">22.3</td>
+                <td style="vertical-align: middle;">33.2</td>
+                <td style="vertical-align: middle;">38.9</td>
+                <td style="vertical-align: middle;">31.8</td>
+                <td style="vertical-align: middle;">30.2</td>
+                <td style="vertical-align: middle;">27.6</td>
+              </tr>
+              
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://lmms-lab.github.io/posts/longva/" class="ext-link" style="font-size: 16px; margin-left: 5px;">LongVA
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">NTU S-Lab</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32</td>
+                <td style="vertical-align: middle;">2024-06-24</td>
+                <td style="vertical-align: middle;">31.8</td>
+                <td style="vertical-align: middle;">32.5</td>
+                <td style="vertical-align: middle;">40.6</td>
+                <td style="vertical-align: middle;">22.0</td>
+                <td style="vertical-align: middle;">28.4</td>
+                <td style="vertical-align: middle;">37.3</td>
+                <td style="vertical-align: middle;">29.0</td>
+                <td style="vertical-align: middle;">27.6</td>
+                <td style="vertical-align: middle;">23.7</td>                            
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://pllava.github.io/" class="ext-link" style="font-size: 16px; margin-left: 5px;">PLLaVA-13B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">NUS & NYU & Bytedance</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">13B</td>
+                <td style="vertical-align: middle;">16</td>
+                <td style="vertical-align: middle;">2024-04-24</td>
+                <td style="vertical-align: middle;">30.6</td>
+                <td style="vertical-align: middle;">33.0</td>
+                <td style="vertical-align: middle;">40.3</td>
+                <td style="vertical-align: middle;">18.5</td>
+                <td style="vertical-align: middle;">29.8</td>
+                <td style="vertical-align: middle;">36.0</td>
+                <td style="vertical-align: middle;">27.8</td>
+                <td style="vertical-align: middle;">26.0</td>
+                <td style="vertical-align: middle;">24.3</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://pllava.github.io/" class="ext-link" style="font-size: 16px; margin-left: 5px;">PLLaVA-7B
+                  <p style="font-size: 12px; margin-left: 5px; color: #858383;">NUS & NYU & Bytedance</p>
+                </a></b></td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">16</td>
+                <td style="vertical-align: middle;">2024-04-24</td>
+                <td style="vertical-align: middle;">27.4</td>
+                <td style="vertical-align: middle;">28.9</td>
+                <td style="vertical-align: middle;">36.6</td>
+                <td style="vertical-align: middle;">16.5</td>
+                <td style="vertical-align: middle;">25.3</td>
+                <td style="vertical-align: middle;">32.7</td>
+                <td style="vertical-align: middle;">24.7</td>
+                <td style="vertical-align: middle;">22.8</td>
+                <td style="vertical-align: middle;">22.5</td>
+              </tr>
+          
+          </tbody>                                                   
+        </table> 
+
+        <p style="margin-top: -20px;">
+          <b class="">Date:</b> indicates the publication date of open-source models  &emsp;&emsp;
+          - indicates closed-source models
+        </p>
+
+        <p style=" text-align: left;">
+          1* The videos are sampled at 2 fps when the video duration &lt;16s, otherwise it is 1 fps.
+        </p>
+
+        <p style=" text-align: left;">
+          2* The videos are sampled at 2 fps, and the upper limit is 64 frames.
+        </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Benchmark</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 110%;">
+        <h2 class="title is-3">Data Examples</h2>
+        <div class="content has-text-justified">
+          <p style="text-align: center;", class="mt-3"><strong>All data are newly annotated by humans, not from any existing video dataset.</strong>
+          </p>
+
+        <div class="box m-5">
+          <div id="results-carousel" class="carousel results-carousel">
+            
+            <div class="content has-text-centered">
+              <video src="static/videos/TUNA_0348.mp4" controls width="800" height="480"></video>
+              <p><strong>Visual Characteristic:</strong> High-Dynamic, Multi-Scene, Multi-Subject &emsp;&emsp; <strong>Domain:</strong> Film</p>
+              <div class="content has-text-justified">
+                The video begins with the camera focused on a wooden decorative piece, behind which a man is watching through it.
+                <br><br>
+                Then, the camera cuts to an outdoor scene with blurred edges and a clear center. A white news van with the logo “KXBD 6 News at 6” is visible by the roadside. Next to the van is a set-up camera, and a military green vehicle passes in front of the lens. In the background, greenery and a pedestrian path are visible. A woman with a bag on her right shoulder and a bag in her left hand walks along the sidewalk. The camera moves to the right, where a person is standing by the front passenger door of the news van, making a phone call.
+                <br><br>
+                Next, the camera cuts back indoors, where a man in a black suit suddenly turns to look inside. Behind him is an ornately decorated wall. The man in the suit turns again to look outside, then steps back while closing the door in front of him. He then turns and walks further into the room.
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              <video src="static/videos/TUNA_0559.mp4" controls width="800" height="480"></video>
+              <p><strong>Visual Characteristic:</strong> High-Dynamic, Multi-Scene &emsp;&emsp; <strong>Domain:</strong> Cooking</p>
+              <div class="content has-text-justified">
+                At the beginning of the video, the camera focuses on a transparent glass bowl containing liquid and some ingredients. A hand holding an egg whisk with a black handle stirs the liquid inside, which appears milky white, and bubbles can be seen forming on the surface during the stirring process. Next, the camera cuts to a hand placing several raw pieces of meat into the liquid. The meat pieces are submerged in the milky white liquid.
+                <br><br>
+                Then, the camera shifts to a wooden cutting board, showing a a piece of raw chicken. One hand holds the chicken while the other holds a knife, slicing the chicken in half. The cut can be seen revealing the meat and bone. Both hands pick up the two halves of the chicken and turn them left and right to show the camera.
+                <br><br>
+                Subsequently, the camera returns to the glass bowl, where fingers gently stir the liquid. The fingers press down on a chicken piece, fully immersing it in the liquid. Afterward, text prompts “Make Sure It's Submerged” appear on the screen.
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              <video src="static/videos/TUNA_0453.mp4" controls width="800" height="480"></video>
+              <p><strong>Visual Characteristic:</strong> High-Dynamic &emsp;&emsp; <strong>Domain:</strong> Daily Life</p>
+              <div class="content has-text-justified">
+                At the beginning of the video, the camera focuses on a black table, which has no items on it. In the background, a laptop is placed on the sofa, with some text displayed on the screen. There is a geometric-patterned cushion on the sofa.
+                <br><br>
+                Next, a man dressed in dark clothes enters from the left side of the scene, walks up to the table, and faces the camera without revealing his face. He draws three and a half circles on the table with his left index finger, finally stopping at the center of the table directly in front of him.
+                <br><br>
+                The man lowers his left hand, retrieves a slice of bread from under the table, and places it in the top-right corner of the table. Then, he places a transparent small jar at the center of the table with his right hand. Next, he places a thick book on the right side of the table, directly in front of the slice of bread. Then, he places a white plug behind the jar. Finally, he places a black data cable behind the jar, in front of the plug.
+                <br><br>
+                The man first walks to the left side of the scene, then walks towards the front of the scene, and finally disappears from the scene.
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              <video src="static/videos/TUNA_0710.mp4" controls width="800" height="480"></video>
+              <p><strong>Visual Characteristic:</strong> High-Dynamic &emsp;&emsp; <strong>Domain:</strong> Sports Activity</p>
+              <div class="content has-text-justified">
+                At the beginning of the video, the camera focuses on an indoor skateboarding park. The venue is spacious with a smooth floor, and the walls are adorned with skateboards of various colors and designs. On the left side of the skateboarding park, there are small ramps and a set of stairs. In the middle, there is a larger platform where a person dressed in all black stands. On the wall behind the scene, there is a black circular logo on the right and a slogan with a black background and white letters on the left.
+                <br><br>
+                A male skateboarder wearing a gray T-shirt and light-colored pants appears on the right side of the scene. He is wearing a white hat and has a skateboard under his feet as he glides forward, gradually approaching the camera. The camera follows his movements and rotates to the left. After skating over a small ramp, the skateboarder quickly jumps into the air, flipping the skateboard in mid-air. As a result, the skateboard lands with its wheels facing upwards. The skateboarder loses balance and steps away from the skateboard, taking a few steps forward.
+                <br><br>
+                The camera continues to rotate to the left, revealing two males on the left side of the platform. One male, wearing a black wool cap and a gray short-sleeved shirt, is seated at the edge of the platform. Behind the male in the gray short-sleeved shirt, another male stands and is looking down at an electronic device he is holding.
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              <video src="static/videos/TUNA_0961.mp4" controls width="720" height="360"></video>
+              <p><strong>Visual Characteristic:</strong> Low-Dynamic, Multi-Scene &emsp;&emsp; <strong>Domain:</strong> Driving</p>
+              <div class="content has-text-justified">
+                The video begins with the camera focuses on a black Mercedes-Benz ML 350 4MATIC SUV. To the right of the Mercedes is a metal fence with weeds growing underneath it. To the right of the fence is the opposing lane, where vehicles are continuously driving. Ahead is a traffic intersection with a yellow traffic light. In the background, tall buildings and a pedestrian overpass can be seen, with the words "In Front of Qingshan College" written on it. The weather is sunny, with some white clouds in the sky.
+                <br><br>
+                Subsequently, the traffic light changes from yellow to red, and the brake lights of the black Mercedes SUV illuminate as it begins to move forward slowly. Below the red light on the traffic signal ahead, the right-turn arrow is green, and the camera starts to move forward.
+                <br><br>
+                The Mercedes turns right at the intersection, and the camera pans to the right along with the movement of the Mercedes. The Mercedes ahead enters a narrower road. A yellow solid line is painted in the middle of the road. A long line of vehicles is waiting to pass on the right lane, and a speed limit sign of 40 is painted on the ground of the left lane. There is a row of trees and shrubs on the right side of the street.
+                <br><br>
+                The camera continues to move forward, and ahead is another traffic intersection with a red traffic light. The Mercedes ahead begins to slow down. There is already a car stopped in front of the Mercedes. The camera pans to the right front, shifting the focus to the adjacent lane on the right of the Mercedes. Ahead is a white van, and on the right opposing lane, cars and motorcycles are lined up waiting to move forward.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+          
+        </div>
+      </div> 
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Dataset Statistics</h2>
+
+          <img src="static/images/dataset_statistics.png" alt="data-composition" style="max-width: 50%;"/>
+          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 50%;" >
+            Detailed statistics for <span class="dataset-ref"></span>, including: number of videos (<b>#Videos</b>), video duration (<b>Duration</b>), 
+            number of events (<b>#Events</b>), number of visual elements in captions (<b>#Elements (Narrative-level)</b>), number of visual elements 
+            in events (<b>#Elements (Narrative-level)</b>), number of tokens of caption (<b>#Tokens</b>).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-3">Benchmark Comparison</h2>
+          <div class="box m-5">
+                  
+            <div id="results-carousel" class="carousel results-carousel">
+
+              <div class="content has-text-centered vertical-center">
+                <img src="static/images/comparison_overall.png" alt="composition-overall" style="max-width: 90%;"/>
+                <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                  Comparison with various video understanding benchmarks across several aspects: number of videos (<b>#Videos</b>); number of samples (<b>#Samp.</b>); 
+                  annotation method (<b>Anno.</b>, with M/A denoting manual/automatic); domain (<b>Domain</b>); temporal orientation (<b>Temporal Orientated</b>); 
+                  presence of scene transitions (<b>Scene Trans.</b>); consideration of camera (<b>Camera</b>) and scene (<b>Scene</b>); use of keypoints (<b>Key.</b>) 
+                  for controllability and interpretability; Judgement of semantically identical yet diverse representations (<b>Sem.</b>); availability of multi-dimensional 
+                  scores (<b>M.D.</b>); if global (<b>Global</b>) and fine-grained (<b>Fine.</b>) understanding are concerned.
+                </p>
+              </div>
+
+              <div class="content has-text-centered vertical-center">
+                <img src="static/images/comparison_mcq.png" alt="composition-mcq" style="max-width: 90%;"/>
+                <p style="text-align: center; margin-left: auto; margin-right: auto; width: 90%;" >
+                  Several video understanding benchmark examples and analysis.
+                </p>
+              </div>
+              
+            </div>
+          
+          </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Method SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Method</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <!-- <h2 class="title is-3">Pipeline</h2> -->
+
+          <div class="box m-6">
+            
+            <div id="results-carousel" class="carousel results-carousel">
+
+              <div class="content has-text-centered">
+                <p style="font-size: 20px;"><strong>Dataset Construction</strong></p>
+                  <img src="static/images/construction_dataset.png" alt="construction-dateset" style="max-width: 90%;"/></img>
+                  <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                    Overview of <span class="dataset-ref"></span> construction. We collect and filter high-quality, short videos featuring dynamic temporal content from various sources. 
+                    Each video is then categorized based on its visual characteristics and domain. Trained annotators provide temporally dense descriptions, followed by cross-validation. 
+                    Video experts continuously review annotations, guiding annotators to refine their works, thus ensuring quality of the annotations.
+                  </p>
+              </div>
+
+              <div class="content has-text-centered">
+                <p style="font-size: 20px;"><strong>Automatic Captioning Evaluation</strong></p>
+                  <img src="static/images/eval_cap.png" alt="evaluation-captioning" style="max-width: 90%;"/></img>
+                  <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                    Overview of the evaluation workflow for <span class="benchcap-ref"></span>. We first split candidate caption into multiple events and match them to reference events 
+                    in <span class="dataset-ref"></span>. Then we discard the mismatched events (useless content or inconsistent chronology), and connect the matched candidate events 
+                    with the same reference event, considering the temporal sequence of the captions. Finally, we classify the relationship of visual elements to the candidate event.
+                  </p>
+                  <br>
+              </div>
+
+            </div>
+
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ANALYSIS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Analysis</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Video Complexity / Input Frames</h2>
+
+          <div class="box m-5">
+            <div id="results-carousel" class="carousel results-carousel">
+
+              <div class="content has-text-centered vertical-center">
+                <p style="font-size: 20px;"><strong>Video Complexity</strong></p>
+                <img src="static/images/analysis_complexity.png" alt="analysis-complexity" style="max-width: 50%;"></img>
+                <p style="text-align: center; margin-left: auto; margin-right: auto; width: 90%;" >
+                  Performance comparison across different video complexities.
+                </p>
+                <br>
+              </div>
+
+              <div class="content has-text-centered vertical-center">
+                <p style="font-size: 20px;"><strong>Enrichment of Visual Inputs</strong></p>
+                <img src="static/images/analysis_nframe.png" alt="analysis-nframe" style="max-width: 50%;"></img>
+                <p style="text-align: center; margin-left: auto; margin-right: auto; width: 90%;" >
+                  Performance comparison across different number of input frames.
+                </p>
+                <br>
+              </div>
+
+              <div class="content has-text-centered vertical-center">
+                <p style="font-size: 20px;"><strong>Video Complexity & Enrichment of Visual Inputs</strong></p>
+                <img src="static/images/analysis_nframe_complex.png" alt="analysis-nframe_complexity" style="max-width: 90%;"></img>
+                <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                  Performance comparison of different input frames with different video complexity for models trained in long contexts (over 8K tokens). The horizontal coordinate is the number of input frames.
+                </p>
+                <br>
+              </div>
+              
+            </div>
+
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- MORE DATA EXAMPLES SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">More Data Examples</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+
+          <div class="box m-5">
+            <div id="results-carousel" class="carousel results-carousel" style="position: relative; overflow: hidden;">
+
+              <!-- Slide 1 -->
+              <div class="content" style="padding: 0 5%;">
+                <div style="display: flex; justify-content: space-between;">
+                    <!-- 左列 -->
+                    <div class="content has-text-centered vertical-center" style="width: 48%;">
+                        <p style="font-size: 20px;"><strong><span class="dataset-ref"></span></strong></p>
+                        <img src="static/images/detail_example_dataset.png" alt="analysis-complexity" style="max-width: 100%;"></img>
+                        <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                            A detailed example in <span class="dataset-ref"></span>.
+                        </p>
+                    </div>
+                    <!-- 右列 -->
+                    <div class="content has-text-centered vertical-center" style="width: 48%;">
+                        <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                        <img src="static/images/example_mcq_1.png" alt="example-mcq-1" style="max-width: 100%;"></img>
+                        <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                            Several examples in <span class="benchmcq-ref"></span>, involving <i>Camera Motion</i>, <i>Camera Transition</i>, <i>Scene Description</i> and <i>Scene Transition</i> tasks.
+                        </p>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="content" style="padding: 0 5%;">
+                  <div style="display: flex; justify-content: space-between;">
+                      <!-- 左列 -->
+                      <div class="content has-text-centered vertical-center" style="width: 48%;">
+                          <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                          <img src="static/images/example_mcq_2.png" alt="example-mcq-2" style="max-width: 100%;"></img>
+                          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                              Several examples in <span class="benchmcq-ref"></span>, involving <i>Action Recognition</i>, <i>Action Sequence</i>, and <i>Action-Subject Matching</i> tasks.
+                          </p>
+                      </div>
+                      <!-- 右列 -->
+                      <div class="content has-text-centered vertical-center" style="width: 48%;">
+                          <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                          <img src="static/images/example_mcq_3.png" alt="example-mcq-3" style="max-width: 100%;"></img>
+                          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
+                              Several examples in <span class="benchmcq-ref"></span>, involving <i>Object Recognition</i>, <i>Object Appearance</i>, and <i>Object Location</i> tasks.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+    Coming Soon.
+</code></pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* 调整padding为5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* 代码文本颜色 */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://video-mme.github.io/">Video-MME</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
