@@ -58,7 +58,7 @@
     };
 
     /* Used to replace all references after the page loads */
-    function replaceDatasetReferences() {
+    function replaceAllReferences() {
         const benchRefs = document.getElementsByClassName('bench-ref');
         for (let element of benchRefs) {
             element.innerHTML = BENCH.toString();
@@ -81,7 +81,7 @@
 </head>
 
 
-<body onload="replaceDatasetReferences()">
+<body onload="replaceAllReferences()">
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -154,6 +154,11 @@
         
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><sup>1</sup>Northeastern University, <sup>2</sup>Kuaishou Technology</span>
+              </div>
+              
+              <br>
+              <div class="is-centered has-text-centered is-size-4">
+                <span class="publication-venue" style="background: linear-gradient(to right, #0077be, #00c9a7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">ACL 2025 Main</span>
               </div>
           </div>
 
