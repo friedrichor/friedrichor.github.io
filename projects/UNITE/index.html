@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> UNITE </title>
+
+  <!-- <link rel="icon" href="./static/images/logo.png"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+</head>
+
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://friedrichor.github.io/projects/TUNA">
+            <b>TUNA</b> 
+          </a>
+          <a class="navbar-item" href="https://friedrichor.github.io/projects/UNITE">
+            <b>UNITE</b> 
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title is-bold">
+            <span class="publication-venue" style="font-family: 'Bradley Hand', cursive; background: linear-gradient(to right, #48CBC2, #4874CB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">UNITE</span>
+          </h1>
+          <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
+            <b>Modality Curation: Building Universal Embeddings <br> for Advanced Multimodal Information Retrieval</b>
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+              <a href="https://friedrichor.github.io/" target="_blank">Fanheng Kong</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=pdj-Em0AAAAJ&hl=en" target="_blank">Jingyuan Zhang</a><sup>2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://yhlleo.github.io/" target="_blank">Yahui Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Hongzhi Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://neu-datamining.github.io/cse/fengshi/" target="_blank">Shi Feng</a><sup>1†</sup>,</span>
+            <br>
+            <span class="author-block">
+              <a href="https://yangxiaocui1215.github.io/" target="_blank">Xiaocui Yang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://neu-datamining.github.io/wangdl.htm" target="_blank">Daling Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Yu Tian</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Qi Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Fuzheng Zhang</a><sup>2</sup></span>
+            <span class="author-block">
+              <a href="" target="_blank">Guorui Zhou</a><sup>2</sup></span>
+          </div>
+              
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal Contribution, <sup>†</sup>Corresponding Author</span>
+          </div>
+    
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northeastern University, <sup>2</sup>Kuaishou Technology</span>
+          </div>
+        
+        </div>
+
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href=""
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <!-- Code Link. -->
+          <span class="link-block">
+            <a href="https://github.com/friedrichor/UNITE"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+              </a>
+          </span>
+           <!-- Model Link. -->
+           <span class="link-block">
+            <a href="https://huggingface.co/collections/friedrichor/unite-682da30c4540abccd3da3a6b"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <p style="font-size:18px">🤗</p>
+              </span>
+              <span>Model</span>
+            </a>
+          </span> 
+          <!-- Dataset Link. -->
+          <span class="link-block">
+            <a href="https://huggingface.co/collections/friedrichor/unite-682da30c4540abccd3da3a6b"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <p style="font-size:18px">🤗</p>
+              </span>
+              <span>Dataset</span>
+            </a>
+          </span> 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <img src="static/images/overall_task.png" alt="overall-task" style="max-width: 60%;"/>
+            <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 60%;" >
+              We develop a universal multimodal embedder <strong>UNITE</strong>, allowing for a unified representation of arbitrary multimodal contents.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Multimodal information retrieval (MIR) faces inherent challenges due to the heterogeneity of data sources and the complexity of cross-modal alignment. While previous studies 
+          have identified modal gaps in feature spaces, a systematic approach to address these challenges remains unexplored. In this work, we introduce <strong>UNITE</strong>, a universal 
+          framework that tackles these challenges through two critical yet underexplored aspects: <I>data curation</I> and <I>modality-aware training configurations</I>. Our work 
+          provides the first comprehensive analysis of how modality-specific data properties influence downstream task performance across diverse scenarios. Moreover, we propose 
+          Modal-Aware Masked Contrastive Learning (MAMCL) to mitigate the competitive relationships among the instances of different modalities. Our framework achieves state-of-the-art 
+          results on multiple multimodal retrieval benchmarks, outperforming existing methods by notable margins. Through extensive experiments, we demonstrate that strategic modality 
+          curation and tailored training protocols are pivotal for robust cross-modal representation learning. This work not only advances MIR performance but also provides a foundational 
+          blueprint for future research in multimodal systems.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
+  }
+</script>
+
+
+<!-- Method SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Method</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-centered">
+          <img src="static/images/overall_model.png" alt="overall-model" style="max-width: 100%;"/>
+          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 100%;" >
+            Overview of <b>UNITE</b>: (a) Model architecture utilizing LMM as the backbone, supporting multimodal inputs (text, images, videos, and their combinations). 
+            (b) Similarity matrix after applying MAMCL, which enables focused contrastive learning by restricting comparisons to samples sharing the same target modality,
+            thus reducing inter-modal interference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Results SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Results</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Fine-grained Retrieval</h2>
+          <img src="static/images/radar_results_fine.png" alt="overall-model" style="max-width: 70%;"/>
+          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 70%;" >
+            Performance comparison on fine-grained video-text benchmark (CaReBench) and image-text benchmarks (ShareGPT4V, Urban1K, DOCCI). 
+            Our UNITE achieves the overall optimal performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Instruction-based Retrieval</h2>
+          <img src="static/images/bar_results_instruct.png" alt="overall-model" style="max-width: 100%;"/>
+          <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 100%;" >
+            Performance comparison on instruction-based retrieval benchmarks (left: MMEB and right: WebVid-CoVR). Our UNITE achieves leading performance 
+            on various tasks, even surpassing models with larger parameter scales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+    Coming Soon.
+</code></pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* 调整padding为5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* 代码文本颜色 */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://video-mme.github.io/">Video-MME</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
