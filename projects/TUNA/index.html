@@ -33,53 +33,10 @@
 
   <script src="./visualizer/data/data_public.js" defer></script>
 
-  <script>
-    const BENCH = {
-        toString: function() {
-            return '<span>T<span style="font-size: smaller;">UNA</span></span>'
-        }
-    };
-    const DATASET = {
-        toString: function() {
-            return '<span>T<span style="font-size: smaller;">UNA</span>-1K</span>'
-        }
-    };
-    const BENCHCAP = {
-        toString: function() {
-            return '<span>T<span style="font-size: smaller;">UNA</span>-<span style="font-size: smaller;">CAP</span></span>';
-        }
-    };
-    const BENCHMCQ = {
-        toString: function() {
-            return '<span>T<span style="font-size: smaller;">UNA</span>-<span style="font-size: smaller;">MCQ</span></span>';
-        }
-    };
-
-    /* Used to replace all references after the page loads */
-    function replaceAllReferences() {
-        const benchRefs = document.getElementsByClassName('bench-ref');
-        for (let element of benchRefs) {
-            element.innerHTML = BENCH.toString();
-        }
-        const datasetRefs = document.getElementsByClassName('dataset-ref');
-        for (let element of datasetRefs) {
-            element.innerHTML = DATASET.toString();
-        }
-        const benchcapRefs = document.getElementsByClassName('benchcap-ref');
-        for (let element of benchcapRefs) {
-            element.innerHTML = BENCHCAP.toString();
-        }
-        const benchmcqRefs = document.getElementsByClassName('benchmcq-ref');
-        for (let element of benchmcqRefs) {
-            element.innerHTML = BENCHMCQ.toString();
-        }
-    }
-  </script>
-
 </head>
 
 
-<body onload="replaceAllReferences()">
+<body">
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -119,7 +76,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
             <img src="static/images/logo.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
-            <span style="vertical-align: middle"><span class="bench-ref"></span></span>
+            <span style="vertical-align: middle"><span>T<span style="font-size: smaller;">UNA</span></span></span>
           </h1>
           <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
             Comprehensive Fine-grained Temporal <br> Understanding Evaluation on Dense Dynamic Videos
@@ -226,11 +183,11 @@
         <div class="content has-text-justified">
           Videos are unique in their integration of temporal elements, including camera, scene, action, and attribute, along with their dynamic relationships over time. 
           However, existing benchmarks for video understanding often treat these properties separately or narrowly focus on specific aspects, overlooking the holistic 
-          nature of video content. To address this, we introduce <strong><span class="bench-ref"></span></strong>, a temporal-oriented benchmark for fine-grained understanding 
-          on dense dynamic videos, with two complementary tasks: captioning and QA. Our <strong><span class="bench-ref"></span></strong> features diverse video scenarios 
-          and dynamics, assisted by interpretable and robust evaluation criteria. We evaluate several leading models on our benchmark, providing fine-grained performance 
-          assessments across various dimensions. This evaluation reveals key challenges in video temporal understanding, such as limited action description, inadequate 
-          multi-subject understanding, and insensitivity to camera motion, offering valuable insights for improving video understanding models.
+          nature of video content. To address this, we introduce <strong><span>T<span style="font-size: smaller;">UNA</span></span></strong>, a temporal-oriented benchmark 
+          for fine-grained understanding on dense dynamic videos, with two complementary tasks: captioning and QA. Our <strong><span>T<span style="font-size: smaller;">UNA</span></span></strong> 
+          features diverse video scenarios and dynamics, assisted by interpretable and robust evaluation criteria. We evaluate several leading models on our benchmark, 
+          providing fine-grained performance assessments across various dimensions. This evaluation reveals key challenges in video temporal understanding, such as limited 
+          action description, inadequate multi-subject understanding, and insensitivity to camera motion, offering valuable insights for improving video understanding models.
         </div>
       </div>
     </div>
@@ -258,7 +215,7 @@
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
 
-        <h2 class="title is-3" id="leaderboard">Leaderboard (<span class="benchcap-ref"></span>)</h2>
+        <h2 class="title is-3" id="leaderboard">Leaderboard (<span>T<span style="font-size: smaller;">UNA</span>-<span style="font-size: smaller;">CAP</span></span>)</h2>
         <div class="content">
           <div class="visual-characteristic">
             <p>
@@ -840,9 +797,9 @@
 
           <img src="static/images/dataset_statistics.png" alt="data-composition" style="max-width: 50%;"/>
           <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 50%;" >
-            Detailed statistics for <span class="dataset-ref"></span>, including: number of videos (<b>#Videos</b>), video duration (<b>Duration</b>), 
-            number of events (<b>#Events</b>), number of visual elements in captions (<b>#Elements (Narrative-level)</b>), number of visual elements 
-            in events (<b>#Elements (Narrative-level)</b>), number of tokens of caption (<b>#Tokens</b>).
+            Detailed statistics for TUNA-1K, including: number of videos (<b>#Videos</b>), video duration (<b>Duration</b>), number of events (<b>#Events</b>), 
+            number of visual elements in captions (<b>#Elements (Narrative-level)</b>), number of visual elements in events (<b>#Elements (Narrative-level)</b>), 
+            number of tokens of caption (<b>#Tokens</b>).
           </p>
         </div>
       </div>
@@ -904,9 +861,9 @@
                 <p style="font-size: 20px;"><strong>Dataset Construction</strong></p>
                   <img src="static/images/construction_dataset.png" alt="construction-dateset" style="max-width: 90%;"/></img>
                   <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                    Overview of <span class="dataset-ref"></span> construction. We collect and filter high-quality, short videos featuring dynamic temporal content from various sources. 
-                    Each video is then categorized based on its visual characteristics and domain. Trained annotators provide temporally dense descriptions, followed by cross-validation. 
-                    Video experts continuously review annotations, guiding annotators to refine their works, thus ensuring quality of the annotations.
+                    Overview of TUNA-1K construction. We collect and filter high-quality, short videos featuring dynamic temporal content from various sources. Each video is then 
+                    categorized based on its visual characteristics and domain. Trained annotators provide temporally dense descriptions, followed by cross-validation. Video experts 
+                    continuously review annotations, guiding annotators to refine their works, thus ensuring quality of the annotations.
                   </p>
               </div>
 
@@ -914,9 +871,9 @@
                 <p style="font-size: 20px;"><strong>Automatic Captioning Evaluation</strong></p>
                   <img src="static/images/eval_cap.png" alt="evaluation-captioning" style="max-width: 90%;"/></img>
                   <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                    Overview of the evaluation workflow for <span class="benchcap-ref"></span>. We first split candidate caption into multiple events and match them to reference events 
-                    in <span class="dataset-ref"></span>. Then we discard the mismatched events (useless content or inconsistent chronology), and connect the matched candidate events 
-                    with the same reference event, considering the temporal sequence of the captions. Finally, we classify the relationship of visual elements to the candidate event.
+                    Overview of the evaluation workflow for TUNA-CAP. We first split candidate caption 
+                    into multiple events and match them to reference events in TUNA-1K. Then we discard the mismatched events (useless content or inconsistent chronology), and connect the matched 
+                    candidate events with the same reference event, considering the temporal sequence of the captions. Finally, we classify the relationship of visual elements to the candidate event.
                   </p>
                   <br>
               </div>
@@ -1008,18 +965,18 @@
                 <div style="display: flex; justify-content: space-between;">
                     <!-- 左列 -->
                     <div class="content has-text-centered vertical-center" style="width: 48%;">
-                        <p style="font-size: 20px;"><strong><span class="dataset-ref"></span></strong></p>
+                        <p style="font-size: 20px;"><strong>TUNA-1K</strong></p>
                         <img src="static/images/detail_example_dataset.png" alt="analysis-complexity" style="max-width: 100%;"></img>
                         <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                            A detailed example in <span class="dataset-ref"></span>.
+                            A detailed example in TUNA-1K.
                         </p>
                     </div>
                     <!-- 右列 -->
                     <div class="content has-text-centered vertical-center" style="width: 48%;">
-                        <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                        <p style="font-size: 20px;"><strong>TUNA-MCQ</strong></p>
                         <img src="static/images/example_mcq_1.png" alt="example-mcq-1" style="max-width: 100%;"></img>
                         <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                            Several examples in <span class="benchmcq-ref"></span>, involving <i>Camera Motion</i>, <i>Camera Transition</i>, <i>Scene Description</i> and <i>Scene Transition</i> tasks.
+                            Several examples in TUNA-MCQ, involving <i>Camera Motion</i>, <i>Camera Transition</i>, <i>Scene Description</i> and <i>Scene Transition</i> tasks.
                         </p>
                     </div>
                 </div>
@@ -1030,18 +987,18 @@
                   <div style="display: flex; justify-content: space-between;">
                       <!-- 左列 -->
                       <div class="content has-text-centered vertical-center" style="width: 48%;">
-                          <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                          <p style="font-size: 20px;"><strong>TUNA-MCQ</strong></p>
                           <img src="static/images/example_mcq_2.png" alt="example-mcq-2" style="max-width: 100%;"></img>
                           <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                              Several examples in <span class="benchmcq-ref"></span>, involving <i>Action Recognition</i>, <i>Action Sequence</i>, and <i>Action-Subject Matching</i> tasks.
+                              Several examples in TUNA-MCQ, involving <i>Action Recognition</i>, <i>Action Sequence</i>, and <i>Action-Subject Matching</i> tasks.
                           </p>
                       </div>
                       <!-- 右列 -->
                       <div class="content has-text-centered vertical-center" style="width: 48%;">
-                          <p style="font-size: 20px;"><strong><span class="benchmcq-ref"></span></strong></p>
+                          <p style="font-size: 20px;"><strong>TUNA-MCQ</strong></p>
                           <img src="static/images/example_mcq_3.png" alt="example-mcq-3" style="max-width: 100%;"></img>
                           <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 90%;" >
-                              Several examples in <span class="benchmcq-ref"></span>, involving <i>Object Recognition</i>, <i>Object Appearance</i>, and <i>Object Location</i> tasks.
+                              Several examples in TUNA-MCQ, involving <i>Object Recognition</i>, <i>Object Appearance</i>, and <i>Object Location</i> tasks.
                           </p>
                       </div>
                   </div>

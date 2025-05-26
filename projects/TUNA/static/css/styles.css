@@ -638,3 +638,7 @@ height: 100%; /* Ensure it takes the full height of the parent */
 text-align: center;
 }
 
+.small-caps {
+  text-transform: none;
+  font-variant: small-caps;
+}
