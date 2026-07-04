@@ -2,7 +2,7 @@
 
 ## 🔭 I currently specialize in
 
-**AIGC**, including **Large Multimodal Models** and **Multimodal Dialogue Generation** , and related projects.
+**LLM & Agent Evaluation** and **Agentic Coding**. Previously, I focused on **Multimodal LLMs**, including multimodal understanding, multimodal embeddings, and unified multimodal models.
 
 ## 📃 Academic Page
 
@@ -10,4 +10,4 @@
 - If you are interested in my researches, you are welcome to communicate or collaborate with me via [my email](https://friedrichor.github.io/email.html).
 
 ## 📈 Statistics
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=friedrichor&bg_color=30,e96443,904e95&include_all_commits=true&title_color=fff&text_color=fff)
+![friedrichor's GitHub stats](https://github-readme-stats.vercel.app/api?username=friedrichor&include_all_commits=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)

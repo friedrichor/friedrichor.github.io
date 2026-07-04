@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Lato', arial, sans-serif;
-  color: #434343;
+  color: #3f4852;
   background: #DAE3E7;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #3AAA64;
+  color: #2f8f5b;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -34,7 +34,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #2d844e;
+  color: #236f46;
 }
 
 a:focus {
@@ -67,16 +67,16 @@ a:focus {
 }
 
 a.btn-cta-primary, .btn-cta-primary {
-  background: #54ba4e;
-  border: 1px solid #54ba4e;
+  background: #2f8f5b;
+  border: 1px solid #2f8f5b;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 a.btn-cta-primary:hover, .btn-cta-primary:hover {
-  background: #49ac43;
-  border: 1px solid #49ac43;
+  background: #287a4f;
+  border: 1px solid #287a4f;
   color: #fff;
 }
 
@@ -100,7 +100,7 @@ a.btn-cta-secondary:hover, a.btn-cta-secondary:not(:disabled):not(.disabled):act
 }
 
 .badge-theme {
-  background: #3AAA64;
+  background: #2f8f5b;
   font-size: 12px;
   color: #fff;
   border-radius: 2px;
@@ -180,12 +180,14 @@ a.dotted-link:hover {
 .section .section-inner {
   background: #fff;
   padding: 20px;
+  border: 1px solid #e3e8ec;
+  box-shadow: 0 1px 2px rgba(31, 45, 61, 0.04) !important;
 }
 
 .section .heading {
   margin-top: 0;
   margin-bottom: 20px;
-  color: #545e69;
+  color: #4f5d6a;
   font-size: 24px;
 }
 
@@ -200,8 +202,22 @@ a.dotted-link:hover {
   font-size: 16px;
   font-weight: 750;
 
-  background-color: #dad8d8;
+  background-color: #edf2f0;
   border-radius: 4px;
+}
+
+.projects .resume-list {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.projects .resume-list li {
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.projects .resume-list li:last-child {
+  margin-bottom: 0;
 }
 
 /* About Section */
@@ -267,7 +283,7 @@ a.dotted-link:hover {
 }
 
 .latest .has-ribbon .text {
-  background: #3AAA64;
+  background: #2f8f5b;
   color: #fff;
 }
 
@@ -553,7 +569,7 @@ a.dotted-link:hover {
 /* Info Section */
 .info .svg-inline--fa {
   margin-right: 15px;
-  color: #ccd1d6;
+  color: #b8c1c9;
 }
 
 .info .svg-inline--fa.fa-envelope-o {
@@ -565,7 +581,8 @@ a.dotted-link:hover {
 }
 
 .info li {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
+  line-height: 1.4;
 }
 
 .info li:last-child {
@@ -655,30 +672,41 @@ a.dotted-link:hover {
   color: #999;
 }
 
-/* Education section */
-.education .item {
+/* Education and internship sections */
+.education .item,
+.internship .item {
   margin-bottom: 20px;
 }
 
-.education .item:last-child {
+.education .item:last-child,
+.internship .item:last-child {
   margin-bottom: 0;
 }
 
-.education .item .title {
+.education .item .title,
+.internship .item .title {
   font-size: 16px;
   margin-top: 0;
 }
 
-.education .item .university {
+.education .item .title .degree-note {
+  color: #7b8794;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.education .item .university,
+.internship .item .university {
   font-family: "Lato", arial, sans-serif;
-  font-size: 13px;
-  color: #999;
+  font-size: 13.5px;
+  color: #7b8794;
   font-weight: 600;
   padding-left: 25px;
 }
 
-.education .item .university .year {
-  color: #b0b7bf;
+.education .item .university .year,
+.internship .item .university .year {
+  color: #9aa6b2;
   font-weight: 500;
 }
 
@@ -814,17 +842,17 @@ a.dotted-link:hover {
 
 .dark-mode-switch .form-switch .form-check-input {
   border-radius: 1em;
-  border-color: #DAE3E7;
+  border-color: #dce5e9;
 }
 
 .dark-mode-switch .form-check-input:checked {
-  background-color: #54ba4e;
-  border-color: #54ba4e;
+  background-color: #2f8f5b;
+  border-color: #2f8f5b;
 }
 
 .dark-mode-switch .form-check-input:focus {
   box-shadow: none;
-  border-color: #DAE3E7;
+  border-color: #dce5e9;
 }
 
 body[data-theme="dark"] {
@@ -842,7 +870,7 @@ body[data-theme="dark"] a.btn:hover {
 }
 
 body[data-theme="dark"] .dark-mode-switch .form-check-input:focus {
-  border-color: #54ba4e;
+  border-color: #2f8f5b;
 }
 
 body[data-theme="dark"] .header {
@@ -918,7 +946,8 @@ body[data-theme="dark"] .testimonials .item .source .name {
   color: rgba(255, 255, 255, 0.9);
 }
 
-body[data-theme="dark"] .education .item .title {
+body[data-theme="dark"] .education .item .title,
+body[data-theme="dark"] .internship .item .title {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -945,11 +974,11 @@ body[data-theme="dark"] .aside .subheading {
 body[data-theme="dark"] .gha-header, body[data-theme="dark"] .gha-footer, body[data-theme="dark"] .gha-feed {
   background: #17191c;
   border-color: rgba(255, 255, 255, 0.1);
-  color: #3AAA64;
+  color: #2f8f5b;
 }
 
 body[data-theme="dark"] .gha-feed a {
-  color: #3AAA64;
+  color: #2f8f5b;
 }
 
 body[data-theme="dark"] .gha-header > .gha-github-icon,
