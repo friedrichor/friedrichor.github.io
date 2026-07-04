@@ -51,7 +51,14 @@ a:focus {
   font-weight: bold;
 }
 
-.btn .svg-inline--fa, a.btn .svg-inline--fa {
+.btn .svg-inline--fa,
+.btn .fa,
+.btn .fas,
+.btn .fab,
+a.btn .svg-inline--fa,
+a.btn .fa,
+a.btn .fas,
+a.btn .fab {
   margin-right: 5px;
   position: relative;
   top: -2px;
@@ -167,7 +174,10 @@ a.dotted-link:hover {
   background: #778492;
 }
 
-.header .profile-content .social a .svg-inline--fa {
+.header .profile-content .social a .svg-inline--fa,
+.header .profile-content .social a .fa,
+.header .profile-content .social a .fas,
+.header .profile-content .social a .fab {
   font-size: 20px;
   margin-top: 8px;
 }
@@ -191,7 +201,10 @@ a.dotted-link:hover {
   font-size: 24px;
 }
 
-.section .content .more-link .svg-inline--fa {
+.section .content .more-link .svg-inline--fa,
+.section .content .more-link .fa,
+.section .content .more-link .fas,
+.section .content .more-link .fab {
   margin-right: 5px;
   font-size: 14px;
   position: relative;
@@ -567,9 +580,32 @@ a.dotted-link:hover {
 }
 
 /* Info Section */
+.info li > i.fa,
+.info li > i.fas,
+.info li > i.fab,
+.info li > i.far,
 .info .svg-inline--fa {
+  display: inline-block;
+  width: 1.25em;
+  min-width: 1.25em;
   margin-right: 15px;
+  text-align: center;
   color: #b8c1c9;
+}
+
+.info .info-logo {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  min-width: 1.25em;
+  margin-right: 15px;
+  object-fit: contain;
+  vertical-align: -3px;
+}
+
+.info .info-note {
+  color: #808080;
+  font-style: italic;
 }
 
 .info .svg-inline--fa.fa-envelope-o {
@@ -625,7 +661,10 @@ a.dotted-link:hover {
   background: #66cb8c;
 }
 
-.skills .svg-inline--fa {
+.skills .svg-inline--fa,
+.skills .fa,
+.skills .fas,
+.skills .fab {
   margin-right: 3px;
   position: relative;
   top: 0;
@@ -652,7 +691,10 @@ a.dotted-link:hover {
   margin-bottom: 0;
 }
 
-.testimonials .item .quote .svg-inline--fa {
+.testimonials .item .quote .svg-inline--fa,
+.testimonials .item .quote .fa,
+.testimonials .item .quote .fas,
+.testimonials .item .quote .fab {
   color: #79d19a;
   margin-right: 15px;
 }
@@ -685,8 +727,19 @@ a.dotted-link:hover {
 
 .education .item .title,
 .internship .item .title {
+  color: #778492;
   font-size: 16px;
+  line-height: 1.25;
   margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.internship .item .internship-logo {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  object-fit: contain;
+  vertical-align: -3px;
 }
 
 .education .item .title .degree-note {
@@ -696,16 +749,18 @@ a.dotted-link:hover {
 }
 
 .education .item .university,
-.internship .item .university {
+.internship .item .organization {
   font-family: "Lato", arial, sans-serif;
   font-size: 13.5px;
   color: #7b8794;
   font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0;
   padding-left: 25px;
 }
 
 .education .item .university .year,
-.internship .item .university .year {
+.internship .item .organization .year {
   color: #9aa6b2;
   font-weight: 500;
 }
@@ -727,7 +782,10 @@ a.dotted-link:hover {
   margin-bottom: 0;
 }
 
-.languages .item .svg-inline--fa {
+.languages .item .svg-inline--fa,
+.languages .item .fa,
+.languages .item .fas,
+.languages .item .fab {
   color: #79d19a;
 }
 
@@ -762,7 +820,10 @@ a.dotted-link:hover {
   margin-bottom: 10px;
 }
 
-.list ul li .svg-inline--fa {
+.list ul li .svg-inline--fa,
+.list ul li .fa,
+.list ul li .fas,
+.list ul li .fab {
   margin-right: 5px;
 }
 
@@ -779,7 +840,10 @@ a.dotted-link:hover {
   margin-bottom: 10px;
 }
 
-.credits ul li .svg-inline--fa {
+.credits ul li .svg-inline--fa,
+.credits ul li .fa,
+.credits ul li .fas,
+.credits ul li .fab {
   margin-right: 5px;
   position: relative;
   top: -2px;
@@ -789,7 +853,10 @@ a.dotted-link:hover {
   color: #778492;
 }
 
-.credits ul li a .svg-inline--fa {
+.credits ul li a .svg-inline--fa,
+.credits ul li a .fa,
+.credits ul li a .fas,
+.credits ul li a .fab {
   color: #b0b7bf;
 }
 
