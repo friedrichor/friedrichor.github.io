@@ -257,13 +257,54 @@ a.dotted-link:hover {
   -webkit-background-clip: text;
   background-clip: text;
   color: #765bb8;
-  -webkit-text-fill-color: transparent;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1.2;
+  -webkit-text-fill-color: transparent;
 }
 
 .projects .resume-list .news-award {
-  color: #b34b67;
+  background: rgba(216, 153, 55, 0.1);
+  border: 1px solid rgba(216, 153, 55, 0.22);
+  border-radius: 999px;
+  color: #a36a1d;
+  display: inline-block;
+  font-size: 15px;
   font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-left: 1px;
+  padding: 2px 7px;
+  vertical-align: 0;
+}
+
+.projects .news-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects .news-list li {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 4px;
+  margin-bottom: 8px;
+}
+
+.projects .news-list li::before {
+  background: #b8c1c9;
+  border-radius: 50%;
+  content: "";
+  flex: 0 0 5px;
+  height: 5px;
+  margin-right: 3px;
+  transform: translateY(-2px);
+  width: 5px;
+}
+
+.projects .news-list .news-date {
+  color: #6d7d8c;
+  flex: 0 0 76px;
 }
 
 /* About Section */
@@ -853,8 +894,8 @@ a.dotted-link:hover {
 }
 
 .education .item .title .degree-note {
-  color: #7b8794;
-  font-size: 12px;
+  color: #a7b0ba;
+  font-size: 10px;
   font-weight: 400;
 }
 
@@ -1109,6 +1150,28 @@ body[data-theme="dark"] .section .heading {
 
 body[data-theme="dark"] .section .heading .heading-note {
   color: rgba(255, 255, 255, 0.55);
+}
+
+body[data-theme="dark"] .projects .news-list li::before {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+body[data-theme="dark"] .projects .news-list .news-date {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+body[data-theme="dark"] .projects .resume-list .news-venue {
+  background: linear-gradient(90deg, #9da8ff 0%, #c5a5ef 52%, #e1a7ce 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #c8bdf4;
+  -webkit-text-fill-color: transparent;
+}
+
+body[data-theme="dark"] .projects .resume-list .news-award {
+  background: rgba(216, 153, 55, 0.14);
+  border-color: rgba(230, 179, 86, 0.28);
+  color: #e6bb70;
 }
 
 body[data-theme="dark"] .latest .pub-section-label {
